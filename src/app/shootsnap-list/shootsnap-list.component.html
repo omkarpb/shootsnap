@@ -1,0 +1,19 @@
+<div class="main-list">
+  <div *ngIf="snaps">
+    <div class="list-item" *ngFor="let snap of snaps">
+      <div class="postedBy">
+        <img src={{snap.postedByAvatar}} height="50" class="avatar-img"/>
+        <span class="username">{{ snap.postedBy }}</span>
+      </div>
+      <img src={{snap.imgSrc}} class="snap"/>
+      <div class="likes" (click)="likeToggle(snap)">
+        <fa-icon [icon]="faThumbsUp" size="lg" [ngClass]="snap.isLiked ? 'likedSnap' : ''"></fa-icon>
+        <span> {{ snap.likes }}</span>
+      </div>
+      <span class="caption">{{ snap.caption }}</span>
+    </div>
+  </div>
+  <div *ngIf="!snaps">
+    <p>No Snaps at the moment</p>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.main-list {
+    margin: auto;
+    width: 45%;
+    .list-item {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border: 0.5px solid rgb(231, 230, 230);
+        box-shadow: 5px 5px 5px gray;
+        .postedBy {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            border-bottom: 0.5px solid rgb(231, 230, 230);
+            .avatar-img {
+                margin: 10px;
+                box-shadow: 2px 2px 2px gray;
+            }
+        }
+        .snap {
+            object-fit: contain;
+            height: 50vh;
+            border-bottom: 0.5px solid rgb(231, 230, 230);
+            background-color: black;
+        }
+        .likes {
+            padding: 10px;
+            border-bottom: 0.5px solid rgb(231, 230, 230);
+            cursor: pointer;
+            .likedSnap {
+                color: #2078F4;
+            }
+        }
+        .caption {
+            margin: 10px;
+        }
+    }
+}
