@@ -1,0 +1,15 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  
+  <label>
+    Username
+    <input type="text" formControlName="username">
+  </label>
+
+  <label>
+    Passsword
+    <input type="password" formControlName="password">
+  </label>
+
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  <a href="http://localhost:3000/users/login/facebook"><button type="button" >Facebook Login</button></a>
+</form>

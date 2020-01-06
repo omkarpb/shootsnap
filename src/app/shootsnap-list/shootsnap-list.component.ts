@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SnapsService } from '../snaps.service';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import ImageGenerator from 'random-image-creator';
 
 @Component({
   selector: 'app-shootsnap-list',
@@ -35,7 +36,11 @@ export class ShootsnapListComponent implements OnInit {
 
   loadSnaps() {
     this.snapsService.getSnaps().subscribe((response: any[]) => {
-      this.snaps = response;
+      // Temporary change to load fake image instead of image from S3
+      this.snaps = response.map(item => {
+        item.imgSrc = ImageGenerator(500, 500);
+        return item;
+      });
       console.log(this.snaps);
     }, error => { console.error(error); });
   }
